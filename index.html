@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnWithEase</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --purple-light:#e3c6ff; 
+      --purple-mid:#bf80ff;
+      --purple-strong:#a24dff;
+      --purple-deep:#5c1a9b;
+      --border-soft:rgba(255,255,255,0.12);
+      --text-soft:#f2e6ff;
+
+      --nav-bg:rgba(22,0,55,0.65);
+      --dropdown-bg:#1a0036;
+
+      --glow-1:0 0 22px rgba(200,140,255,0.6);
+      --glow-2:0 0 35px rgba(160,85,255,0.35);
+    }
+    body {
+      background:
+        radial-gradient(circle at 50% -20%, rgba(170,90,255,0.35), transparent 65%),
+        radial-gradient(circle at -20% 0%, rgba(130,70,255,0.25), transparent 60%),
+        linear-gradient(#0c001a, #06000e 70%);
+      color: var(--text-soft);
+      font-family: system-ui, sans-serif;
+    }
+    .navbar {
+      background: var(--nav-bg) !important;
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--glow-2);
+      border-radius: .75rem;
+      padding: 0.6rem 1rem;
+    }
+    .navbar-brand{
+      color: var(--purple-light) !important;
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: .8px;
+      text-shadow: var(--glow-1);
+    }
+    .nav-link{
+      color: #e8d8ff !important;
+      font-weight: 500;
+      padding: 0.6rem 1rem !important;
+      transition: 0.15s;
+    }
+    .nav-link:hover{
+      color: var(--purple-mid) !important;
+      text-shadow: var(--glow-1);
+      transform: translateY(-1px);
+    }
+    .dropdown-menu {
+      background: var(--dropdown-bg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--glow-2);
+      border-radius: 10px;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+    .dropdown-item{
+      color: #e9d9ff;
+      padding: 0.55rem 1rem;
+    }
+    .dropdown-item:hover{
+      background: #320069;
+      color: white;
+      text-shadow: var(--glow-1);
+    }
+    .btn-contact{
+      border-color: var(--purple-mid) !important;
+      color: var(--purple-light) !important;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.5rem 1.2rem;
+      transition: 0.2s ease-in-out;
+    }
+    .btn-contact:hover{
+      background: var(--purple-strong) !important;
+      color:#fff!important;
+      box-shadow: var(--glow-1);
+      transform: translateY(-2px);
+    }
+    .dropdown-menu.long-list{
+      max-height: 60vh;
+      overflow:auto;
+    }
+    @media (max-width: 768px){
+      .navbar{
+        flex-direction: column !important;
+      }
+      .navbar .navbar-nav{
+        align-items: flex-start !important;
+      }
+      .nav-cta{
+        margin-top:.7rem;
+        width: 100%;
+      }
+      .btn-contact{
+        width: 100%;
+        text-align: center;
+      }
+    }
+    h1, h2, h3, p {
+      color: var(--text-soft);
+      text-shadow: 0 0 6px rgba(150,90,255,0.2);
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 2.6rem;
+    }
+    p {
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+    .section-wrapper {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 35px;
+      margin-top: 40px;
+      box-shadow: var(--glow-2);
+    }
+    .hero{
+      text-align:center;
+      padding:120px 20px 60px;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      top:-180px;
+      left:50%;
+      transform:translateX(-50%);
+      width:1200px;
+      height:900px;
+      background:radial-gradient(circle,rgba(130,50,255,0.3),transparent 70%);
+      filter:blur(130px);
+      z-index:-1;
+    }
+    .hero h1{
+      font-size:3.6rem;
+      font-weight:800;
+      background:linear-gradient(90deg,#b08cff,#6f2bff,#d8c6ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero p{
+      max-width:900px;
+      margin:20px auto;
+      font-size:1.25rem;
+      color:#b7b7d4;
+    }
+    .quick-links{
+      margin-top:35px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+    }
+    .quick-links a{
+      padding:12px 28px;
+      background:var(--purple-strong);
+      border-radius:40px;
+      color:white;
+      text-decoration:none;
+      font-size:1.1rem;
+      transition:.3s;
+      box-shadow:0 0 18px rgba(140,82,255,0.4);
+    }
+    .quick-links a:hover{
+      background:#874aff;
+      box-shadow:0 0 25px rgba(140,82,255,0.6);
+      transform:translateY(-3px);
+    }
+    .content-block{
+      padding:60px 40px;
+      max-width:900px;
+      margin:auto;
+      line-height:1.75;
+      color:#b7b7d4;
+      font-size:1.15rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-3">
+    <nav class="navbar navbar-expand-lg px-3">
+      <a class="navbar-brand" href="index.html">LearnWithEase</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">DSA</a>
+            <ul class="dropdown-menu long-list">
+              <li><a class="dropdown-item" href="dsa/introduction.html">Introduction</a></li>
+              <li><a class="dropdown-item" href="dsa/arrays.html">Array</a></li>
+              <li><a class="dropdown-item" href="dsa/strings.html">String</a></li>
+              <li><a class="dropdown-item" href="dsa/hashing.html">Hashing</a></li>
+              <li><a class="dropdown-item" href="dsa/linked-list.html">Linked List</a></li>
+              <li><a class="dropdown-item" href="dsa/stack.html">Stack</a></li>
+              <li><a class="dropdown-item" href="dsa/queue.html">Queue</a></li>
+              <li><a class="dropdown-item" href="dsa/tree.html">Tree</a></li>
+              <li><a class="dropdown-item" href="dsa/graph.html">Graph</a></li>
+              <li><a class="dropdown-item" href="dsa/recursion.html">Recursion</a></li>
+              <li><a class="dropdown-item" href="dsa/searching-algorithm.html">Searching Algorithm</a></li>
+              <li><a class="dropdown-item" href="dsa/sorting-algoritm.html">Sorting Algorithm </a></li>
+              <li><a class="dropdown-item" href="dsa/greedy-algorithm.html">Greedy Algorithm</a></li>
+              <li><a class="dropdown-item" href="dsa/graph-algorithm.html">Graph Algorithm</a></li>
+              <li><a class="dropdown-item" href="dsa/dynamic-programming.html">Dynamic Programming</a></li>
+              <li><a class="dropdown-item" href="dsa/bitwise-algorithm.html">Bitwise Algorithm</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">C</a>
+            <ul class="dropdown-menu long-list">
+              <li><a class="dropdown-item" href="c/introduction.html">Introduction</a></li>
+              <li><a class="dropdown-item" href="c/basics.html">C Basics</a></li>
+              <li><a class="dropdown-item" href="c/variable.html">Variable</a></li>
+              <li><a class="dropdown-item" href="c/data-type.html">Data Type</a></li>
+              <li><a class="dropdown-item" href="c/operators.html">Operators</a></li>
+              <li><a class="dropdown-item" href="c/decision-making.html">Decision Making</a></li>
+              <li><a class="dropdown-item" href="c/loops.html">Loops</a></li>
+              <li><a class="dropdown-item" href="c/arrays.html">Array</a></li>
+              <li><a class="dropdown-item" href="c/strings.html">Strings</a></li>
+              <li><a class="dropdown-item" href="c/pointers.html">Pointers</a></li>
+              <li><a class="dropdown-item" href="c/functions.html">Functions</a></li>
+              <li><a class="dropdown-item" href="c/structures-unions.html">Structures & Unions</a></li>
+              <li><a class="dropdown-item" href="c/unions.html">Unions</a></li>
+              <li><a class="dropdown-item" href="c/data-packing.html">Data Packing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Python</a>
+            <ul class="dropdown-menu long-list">
+              <li><a class="dropdown-item" href="python/introduction.html">Introduction</a></li>
+              <li><a class="dropdown-item" href="python/variables.html">Variables</a></li>
+              <li><a class="dropdown-item" href="python/operators.html">Operators</a></li>
+              <li><a class="dropdown-item" href="python/keywords.html">Keywords</a></li>
+              <li><a class="dropdown-item" href="python/data-types.html">Data Types</a></li>
+              <li><a class="dropdown-item" href="python/conditional-statements.html">Conditional Statement</a></li>
+              <li><a class="dropdown-item" href="python/loops.html">Loops</a></li>
+              <li><a class="dropdown-item" href="python/strings.html">Strings</a></li>
+              <li><a class="dropdown-item" href="python/lists.html">Lists</a></li>
+              <li><a class="dropdown-item" href="python/tuples.html">Tuples</a></li>
+              <li><a class="dropdown-item" href="python/dictionary.html">Dictionary</a></li>
+              <li><a class="dropdown-item" href="python/sets.html">Sets</a></li>
+              <li><a class="dropdown-item" href="python/arrays.html">Arrays</a></li>
+              <li><a class="dropdown-item" href="python/oop.html">OOPs</a></li>
+          </ul>
+          </li>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-outline-light btn-contact" href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container py-5 section-wrapper">
+    <h1 class="mb-3">Welcome to LearnWithEase</h1>
+    </div>
+  </div>
+  <section class="hero">
+    <h1>Hello, What Do You Want To Learn?</h1>
+    <p>Explore programming basics and beginner friendly explanations.</p>
+    <div class="quick-links">
+      <a href="dsa/introduction.html">Start DSA →</a>
+      <a href="c/introduction.html">Start C →</a>
+      <a href="python/introduction.html">Start Python →</a>
+    </div>
+  </section>
+  <section class="content-block">
+    <p>LearnWithEase is a beginner friendly learning platform designed to make programming and DSA concepts simple, clear, and approachable. Many students struggle because most resources start at an advanced level, leaving foundational gaps. This website fills those gaps by providing simple explanations using analogies, and structured topic breakdowns. Learners can easily understand the basics of DSA, C programming, and Python without feeling overwhelmed. Each topic includes curated links to trusted external sites like GeeksforGeeks and W3Schools, allowing students to smoothly transition from basic understanding to deeper study. LearnWithEase ensures a guided, organized, and confidence building learning experience.
+</p>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

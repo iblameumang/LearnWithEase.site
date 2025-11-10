@@ -1,0 +1,57 @@
+ /* Tablet Breakpoint: Navbar becomes stacked */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      .navbar-collapse {
+        width: 100%;
+      }
+      body {
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: radial-gradient(circle at top, #4b1bff 0%, #160a2d 40%, #000000 100%);
+text-align: center;
+padding: 0 20px;
+}
+
+
+.hero h1 {
+font-size: 3.5rem;
+font-weight: 800;
+margin: 0;
+background: linear-gradient(90deg, #a472ff, #7134ff, #b18cff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.hero p {
+margin-top: 20px;
+font-size: 1.2rem;
+max-width: 700px;
+opacity: 0.8;
+}
+
+
+.hero .cta-btn {
+margin-top: 40px;
+padding: 14px 40px;
+background: #6f2bff;
+border: none;
+border-radius: 40px;
+color: white;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 0 20px rgba(111, 43, 255, 0.4);
+}
+
+
+.hero .cta-btn:hover {
+transform: translateY(-4px);
+box-shadow: 0 0 30px rgba(149, 82, 255, 0.7);
+background: #874aff;
+}
+    }

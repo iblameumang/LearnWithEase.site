@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnWithEase — Premium Hero Section</title>
+  <style>
+    :root {
+      --blackhole-black: #050505;
+      --deep-purple: #6f2bff;
+      --soft-purple: #b08cff;
+      --glow-purple: rgba(140, 82, 255, 0.6);
+      --text-light: #e8e8ff;
+      --subtle-text: #b7b7d4;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--blackhole-black);
+      color: var(--text-light);
+    }
+    .topbar {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      right: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+    .logo-text {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--soft-purple);
+      letter-spacing: 0.6px;
+    }
+    .nav-links a {
+      color: var(--subtle-text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--soft-purple);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, var(--soft-purple) 0%, #1a0a33 35%, var(--blackhole-black) 100%);
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(90deg, var(--soft-purple), var(--deep-purple), #d8c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      max-width: 780px;
+      color: var(--subtle-text);
+      line-height: 1.7;
+    }
+    .hero .cta-btn {
+      margin-top: 40px;
+      padding: 16px 48px;
+      background: var(--deep-purple);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 25px var(--glow-purple);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero .cta-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px rgba(150, 90, 255, 0.9);
+      background: #874aff;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo-text">LearnWithEase</div>
+
+    <div class="nav-links">
+      <a href="/dsa/introduction.html">DSA</a>
+      <a href="/c/pointers.html">C</a>
+      <a href="/python/data-types.html">Python</a>
+    </div>
+  </div>
+  <section class="hero">
+    <h1>Learn Smarter. Learn With Ease.</h1>
+    <p>LearnWithEase is a beginner friendly learning platform designed to make programming and DSA concepts simple, clear, and approachable. Many students struggle because most resources start at an advanced level, leaving foundational gaps. This website fills those gaps by providing simple explanations using analogies, and structured topic breakdowns. Learners can easily understand the basics of DSA, C programming, and Python without feeling overwhelmed. Each topic includes curated links to trusted external sites like GeeksforGeeks and W3Schools, allowing students to smoothly transition from basic understanding to deeper study. LearnWithEase ensures a guided, organized, and confidence building learning experience.</p>
+    <a href="/index.html" class="cta-btn">Go to Homepage</a>
+  </section>
+</body>
+</html>
